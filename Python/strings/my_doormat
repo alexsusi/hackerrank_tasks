@@ -1,0 +1,30 @@
+def doormat(rows, length):
+    p1 = ".|."
+    p2 = "WELCOME"
+    
+    pattern = []
+
+    # upper half of doormat
+    for i in range(rows // 2):
+        pattern.append(p1 * (i * 2 + 1))
+    
+    # middle welcome line
+    pattern.append(p2)
+    
+    # lower half of doormat (mirror image of the top half)
+    for i in range(rows // 2, 0, -1):
+        line = pattern[i - 1]
+        pattern.append(line)
+    
+    # center list
+    centered_list = [line.center(length, "-") for line in pattern]
+    centered_list = "\n".join(centered_list)
+    return centered_list
+    
+if __name__ == "__main__":
+    rows, length = input().split()
+    rows = int(rows)
+    length = int(length)
+
+    result = doormat(rows, length)
+    print(result)
