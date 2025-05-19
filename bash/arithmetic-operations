@@ -1,0 +1,7 @@
+read expression
+
+# bc basic calculator
+# -l loads the math library and automatically sets scale=20, unless you override it
+result=$(echo "scale = 10; $expression" | bc -l)
+
+printf "%.3f\n" "$result"
