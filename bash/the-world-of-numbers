@@ -1,0 +1,7 @@
+read -p "X" xvar
+read -p "Y" yvar
+
+echo "$(( $xvar + $yvar )) "
+echo "$(($xvar - $yvar))"
+echo $(($xvar * $yvar))
+echo $(( $xvar / $yvar ))
